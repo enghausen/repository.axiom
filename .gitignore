@@ -1,0 +1,4 @@
+# Build artifacts: these are copied from ../axiom by build.sh on every run.
+# The generated repo/zips/ output IS committed - GitHub Pages serves it.
+/repo/plugin.video.axiom/
+/repo/context.axiom/

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.axiom" version="1.0.0" name="Axiom Repository" provider-name="enghausen">
+    <extension point="xbmc.addon.repository" name="Axiom Repository">
+        <dir>
+            <info compressed="false">https://enghausen.github.io/repository.axiom/repo/zips/addons.xml</info>
+            <checksum>https://enghausen.github.io/repository.axiom/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://enghausen.github.io/repository.axiom/repo/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Axiom Repository</summary>
+        <description lang="en">Repository for the Axiom video addon and its helper addons.</description>
+        <platform>all</platform>
+    </extension>
+</addon>
