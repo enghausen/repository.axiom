@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.axiom" version="4.1.0" name="Axiom" provider-name="enghausen">
+<addon id="plugin.video.axiom" version="4.1.1" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
@@ -63,6 +63,9 @@
             <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
         </assets>
         <news>
+            Changelog 4.1.1
+            [BUG] Migrated the last deprecated ListItem resumetime property to InfoTagVideo.setResumePoint - removes the final deprecation warning from the InfoTagVideo migration
+
             Changelog 4.1.0
             [FEATURE] Renamed addon to Axiom (plugin.video.axiom, context.axiom) - standalone continuation of Seren, based on Prism 4.0.1
             [FEATURE] Removed the anime feature completely (home menu entry, routes, menus, strings)
