@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="context.axiom" version="3.1.0" name="Axiom - Global Context Menu Items" provider-name="enghausen">
+<addon id="context.axiom" version="3.2.0" name="Axiom - Global Context Menu Items" provider-name="enghausen">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
 		<import addon="xbmc.python" version="3.0.0" />
@@ -57,16 +57,21 @@
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
 		<forum></forum>
-		<website></website>
-		<source></source>
+		<website>https://github.com/enghausen/Axiom</website>
+		<source>https://github.com/enghausen/Axiom</source>
 		<disclaimer lang="en"></disclaimer>
 		<assets>
-			<icon>resources/images/ico-seren-3.png</icon>
-			<fanart>fanart-seren-3.jpg</fanart>
-			<clearlogo>resources/images/logo-seren-3.png</clearlogo>
-			<poster>resources/images/poster-seren-3.png</poster>
+			<icon>resources/images/ico-axiom.png</icon>
+			<fanart>resources/images/fanart-axiom.png</fanart>
+			<clearlogo>resources/images/logo-axiom.png</clearlogo>
+			<poster>resources/images/poster-axiom.png</poster>
 		</assets>
 		<news>
+			Changelog 3.2.0
+			Completed the internal rename to Axiom in step with the main addon
+			New original Axiom artwork
+			Addon metadata now points at the Axiom repository
+
 			Changelog 3.0.2
 			Compressed icons from 3.53 MB to 1.34
 			Update background color to Black

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="context.axiom" version="3.1.0" name="Axiom - Global Context Menu Items" provider-name="enghausen">
+<addons><addon id="context.axiom" version="3.2.0" name="Axiom - Global Context Menu Items" provider-name="enghausen">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
 		<import addon="xbmc.python" version="3.0.0" />
@@ -57,16 +57,21 @@
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
 		<forum />
-		<website />
-		<source />
+		<website>https://github.com/enghausen/Axiom</website>
+		<source>https://github.com/enghausen/Axiom</source>
 		<disclaimer lang="en" />
 		<assets>
-			<icon>resources/images/ico-seren-3.png</icon>
-			<fanart>fanart-seren-3.jpg</fanart>
-			<clearlogo>resources/images/logo-seren-3.png</clearlogo>
-			<poster>resources/images/poster-seren-3.png</poster>
+			<icon>resources/images/ico-axiom.png</icon>
+			<fanart>resources/images/fanart-axiom.png</fanart>
+			<clearlogo>resources/images/logo-axiom.png</clearlogo>
+			<poster>resources/images/poster-axiom.png</poster>
 		</assets>
 		<news>
+			Changelog 3.2.0
+			Completed the internal rename to Axiom in step with the main addon
+			New original Axiom artwork
+			Addon metadata now points at the Axiom repository
+
 			Changelog 3.0.2
 			Compressed icons from 3.53 MB to 1.34
 			Update background color to Black
@@ -107,18 +112,18 @@
 			Rework for Seren 2.0
 		</news>
 	</extension>
-</addon><addon id="plugin.video.axiom" version="4.1.2" name="Axiom" provider-name="enghausen">
+</addon><addon id="plugin.video.axiom" version="4.2.0" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" version="2.27.0" />
         <import addon="script.module.beautifulsoup4" version="4.9.3" />
-        <import addon="context.axiom" version="2.2.0" />
+        <import addon="context.axiom" version="3.2.0" />
         <import addon="script.module.inputstreamhelper" version="0.5.10" optional="true" />
         <import addon="script.module.unidecode" version="1.1.1" />
         <import addon="script.module.myconnpy" version="8.0.18" />
     </requires>
-    <extension point="xbmc.python.pluginsource" library="seren.py">
+    <extension point="xbmc.python.pluginsource" library="axiom.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.service" library="service.py" />
@@ -133,12 +138,18 @@
         <website>https://github.com/enghausen/Axiom</website>
         <source>https://github.com/enghausen/Axiom</source>
         <disclaimer lang="en">
-            Last updated: December 6, 2024.
+            Last updated: July 24, 2026.
+            Axiom does not host, index, provide or distribute any media content. The software ships
+            with no scrapers or sources of any kind; any provider packages are third party software
+            installed separately by the user, and any playback requires external services that the
+            user separately subscribes to and configures. The user alone is responsible for ensuring
+            that their use of such providers and services, and any content accessed through them,
+            complies with applicable law and the rights of content owners in their jurisdiction.
             The information contained within the Axiom software (the "Service") is for general information purposes
             only.
             The author assumes no responsibility for errors, omissions in the contents on the Service, nor does it
             assume responsibility for any material provided by any external services.
-            The use of the Service does not author the user to engage in any kind of illegal, criminal or tortious
+            The use of the Service does not authorize the user to engage in any kind of illegal, criminal or tortious
             activity through the use of the software, including infringement of any third party intellectual property
             rights (including without limitation copyright, trade marks, patent, trade secrets and confidential
             information), fraud, child pornography, trafficking in obscene material, violation of applicable export
@@ -161,16 +172,28 @@
             information on these external websites.
         </disclaimer>
         <assets>
-            <icon>resources/images/ico-seren-3.png</icon>
-            <fanart>resources/images/fanart-seren-3.jpg</fanart>
-            <clearlogo>resources/images/logo-seren-3.png</clearlogo>
-            <poster>resources/images/poster-seren-3.png</poster>
+            <icon>resources/images/ico-axiom.png</icon>
+            <fanart>resources/images/fanart-axiom.png</fanart>
+            <clearlogo>resources/images/logo-axiom.png</clearlogo>
+            <poster>resources/images/poster-axiom.png</poster>
             <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
             <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
             <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
             <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
         </assets>
         <news>
+            Changelog 4.2.0
+            [FEATURE] Completed the internal rename to Axiom - modules, identifiers, window properties and settings no longer carry inherited names
+            [FEATURE] New original Axiom artwork (icon, fanart, logo and poster) in both addons
+            [BUG] Fixed TorBox settings labels showing the wrong text in non-English languages
+            [BUG] Removed an obsolete update notice left over from earlier versions
+            [BUG] Spelling and grammar corrections across dialogs, settings and translations
+            [FEATURE] The addon disclaimer now states explicitly that Axiom hosts and indexes no content and ships with no sources
+
+            Changelog 4.1.2
+            [BUG] Fixed hang on Kodi exit - the abort helpers now reuse a single persistent xbmc.Monitor instead of constructing a new one on every call, so waitForAbort no longer blocks past its timeout during shutdown and the long life service stops within Kodi's abort window
+            [BUG] Fixed a second hang class after playback - thread pools now shut down their executors explicitly when work completes instead of relying on garbage collection, so idle worker threads no longer block script shutdown
+
             Changelog 4.1.1
             [BUG] Migrated the last deprecated ListItem resumetime property to InfoTagVideo.setResumePoint - removes the final deprecation warning from the InfoTagVideo migration
 
