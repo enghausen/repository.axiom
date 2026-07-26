@@ -112,7 +112,7 @@
 			Rework for Seren 2.0
 		</news>
 	</extension>
-</addon><addon id="plugin.video.axiom" version="4.2.0" name="Axiom" provider-name="enghausen">
+</addon><addon id="plugin.video.axiom" version="4.2.1" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
@@ -176,12 +176,16 @@
             <fanart>resources/images/fanart-axiom.png</fanart>
             <clearlogo>resources/images/logo-axiom.png</clearlogo>
             <poster>resources/images/poster-axiom.png</poster>
-            <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
-            <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
-            <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
-            <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
+            <screenshot>resources/screenshots/screenshot-01.png</screenshot>
+            <screenshot>resources/screenshots/screenshot-02.png</screenshot>
+            <screenshot>resources/screenshots/screenshot-03.png</screenshot>
+            <screenshot>resources/screenshots/screenshot-04.png</screenshot>
         </assets>
         <news>
+            Changelog 4.2.1
+            [FEATURE] New screenshots showing Axiom in use
+            [FEATURE] The window tests in settings now use neutral placeholder data and no longer name a real debrid service
+
             Changelog 4.2.0
             [FEATURE] Completed the internal rename to Axiom - modules, identifiers, window properties and settings no longer carry inherited names
             [FEATURE] New original Axiom artwork (icon, fanart, logo and poster) in both addons
