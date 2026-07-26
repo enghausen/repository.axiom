@@ -1,4 +1,7 @@
-""" 
+# This script comes from a public Kodi repository generator template.
+# It carries no licence header of its own and is not authored here.
+
+"""
     Put this script in the root folder of your repo and it will
     zip up all addon folders, create a new zip in your zips folder
     and then update the md5 and addons.xml file
