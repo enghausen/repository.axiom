@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.axiom" version="4.2.2" name="Axiom" provider-name="enghausen">
+<addon id="plugin.video.axiom" version="4.3.0" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
@@ -69,6 +69,13 @@
             <screenshot>resources/screenshots/screenshot-04.png</screenshot>
         </assets>
         <news>
+            Changelog 4.3.0
+            [FEATURE] Axiom now authenticates with its own Trakt application - every device must authorize Trakt again once after this update
+            [FEATURE] Collection is now called Library throughout, following Trakt's current naming
+            [FEATURE] Drop and Undrop replace the Hide action in the Trakt manager, matching trakt.tv - dropping a show removes it from Next Up and Finish Watching and can be undone at any time
+            [BUG] The hidden item menu filters now actually work - shows and movies hidden or dropped on trakt.tv will start disappearing from Finish Watching, Recent Episodes and New TV Shows, where they previously stayed visible
+            [BUG] Library and episode ratings sync are paginated, so large libraries and rating sets no longer risk truncation at the Trakt API's page limits
+
             Changelog 4.2.2
             [BUG] Addon metadata now points at the repository the addon is distributed from
 
