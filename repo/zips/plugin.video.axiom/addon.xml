@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.axiom" version="4.3.0" name="Axiom" provider-name="enghausen">
+<addon id="plugin.video.axiom" version="4.4.0" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.0" />
@@ -69,6 +69,12 @@
             <screenshot>resources/screenshots/screenshot-04.png</screenshot>
         </assets>
         <news>
+            Changelog 4.4.0
+            [FEATURE] Axiom now authenticates with its own Premiumize application - every device using Premiumize must authorize it again once after this update
+            [BUG] Automatic cloud removal now actually works - it previously compared storage in the wrong unit and never saw the transfers created when caching an uncached source; when storage passes the threshold it now clears all transfers Axiom itself created and touches nothing else on the account
+            [BUG] Premiumize API errors no longer crash playback, caching or background tasks - error responses are detected and reported instead of being read as data
+            [FEATURE] Removed the Prefer Transcoded Files option - Premiumize retired server side transcoding, so the setting no longer had any effect
+
             Changelog 4.3.0
             [FEATURE] Axiom now authenticates with its own Trakt application - every device must authorize Trakt again once after this update
             [FEATURE] Collection is now called Library throughout, following Trakt's current naming
