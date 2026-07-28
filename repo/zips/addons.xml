@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="context.axiom" version="3.2.1" name="Axiom - Global Context Menu Items" provider-name="enghausen">
+<addons><addon id="context.axiom" version="3.2.2" name="Axiom - Global Context Menu Items" provider-name="enghausen">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
-		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="xbmc.python" version="3.0.1" />
 	</requires>
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
@@ -67,6 +67,9 @@
 			<poster>resources/images/poster-axiom.png</poster>
 		</assets>
 		<news>
+			Changelog 3.2.2
+			Kodi 21 or newer is now required, in step with the main addon
+
 			Changelog 3.2.1
 			Addon metadata now points at the repository the addon is distributed from
 
@@ -115,10 +118,10 @@
 			Rework for Seren 2.0
 		</news>
 	</extension>
-</addon><addon id="plugin.video.axiom" version="4.4.0" name="Axiom" provider-name="enghausen">
+</addon><addon id="plugin.video.axiom" version="4.5.0" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
-        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="xbmc.python" version="3.0.1" />
         <import addon="script.module.requests" version="2.27.0" />
         <import addon="script.module.beautifulsoup4" version="4.9.3" />
         <import addon="context.axiom" version="3.2.0" />
@@ -185,6 +188,13 @@
             <screenshot>resources/screenshots/screenshot-04.png</screenshot>
         </assets>
         <news>
+            Changelog 4.5.0
+            [FEATURE] Hoster support has been removed - no current scraper package can produce hoster sources, and resolving them never worked, so the feature was unreachable from end to end; the Enable Hosters options are gone from all four debrid services
+            [FEATURE] The Terminate on setting is gone - with hosters removed its three choices collapsed to one, and pre-emptive termination now always counts cached torrents, still only when Pre-emptive Termination is enabled
+            [FEATURE] Hosters is no longer a source type in the sort settings - existing sort preferences are migrated automatically and keep their order
+            [FEATURE] Kodi 21 or newer is now required
+            [BUG] Settings now open on the right place after authorizing a service - the focus was addressing controls that stopped existing in Kodi 21, so it had quietly done nothing
+
             Changelog 4.4.0
             [FEATURE] Axiom now authenticates with its own Premiumize application - every device using Premiumize must authorize it again once after this update
             [BUG] Automatic cloud removal now actually works - it previously compared storage in the wrong unit and never saw the transfers created when caching an uncached source; when storage passes the threshold it now clears all transfers Axiom itself created and touches nothing else on the account

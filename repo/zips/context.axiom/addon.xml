@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="context.axiom" version="3.2.1" name="Axiom - Global Context Menu Items" provider-name="enghausen">
+<addon id="context.axiom" version="3.2.2" name="Axiom - Global Context Menu Items" provider-name="enghausen">
 	<requires>
 		<import addon="xbmc.addon" version="17.9.910" />
-		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="xbmc.python" version="3.0.1" />
 	</requires>
 	<extension point="kodi.context.item">
 		<menu id="kodi.core.main">
@@ -67,6 +67,9 @@
 			<poster>resources/images/poster-axiom.png</poster>
 		</assets>
 		<news>
+			Changelog 3.2.2
+			Kodi 21 or newer is now required, in step with the main addon
+
 			Changelog 3.2.1
 			Addon metadata now points at the repository the addon is distributed from
 
