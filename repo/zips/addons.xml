@@ -118,7 +118,7 @@
 			Rework for Seren 2.0
 		</news>
 	</extension>
-</addon><addon id="plugin.video.axiom" version="4.5.0" name="Axiom" provider-name="enghausen">
+</addon><addon id="plugin.video.axiom" version="4.6.0" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.1" />
@@ -188,6 +188,15 @@
             <screenshot>resources/screenshots/screenshot-04.png</screenshot>
         </assets>
         <news>
+            Changelog 4.6.0
+            [BUG] A failing debrid service can no longer hide the sources of the others - each provider's results now survive any other provider's crash
+            [BUG] Debrid API errors no longer crash scraping, browsing, caching or downloading - Real-Debrid, AllDebrid and TorBox now detect and report errors instead of reading them as data, completing what 4.4.0 started for Premiumize
+            [BUG] Real-Debrid cloud sources now actually play - resolving previously died on an import path that was dead in the inherited code; AllDebrid cloud sources go through the same fixed path
+            [BUG] Real-Debrid no longer burns a token refresh on ordinary API errors - it refreshes only when authorization has actually expired
+            [BUG] TorBox Cache Assist now reports real download progress instead of failing immediately
+            [BUG] AllDebrid magnet operations now fail visibly instead of silently - AllDebrid retired the endpoint they relied on, so they are out of service until the coming API migration; authorization, saved links and My Files keep working, and a notice appears once per session
+            [FEATURE] API error notifications appear at most once per error type per session, and access keys are no longer written to the log
+
             Changelog 4.5.0
             [FEATURE] Hoster support has been removed - no current scraper package can produce hoster sources, and resolving them never worked, so the feature was unreachable from end to end; the Enable Hosters options are gone from all four debrid services
             [FEATURE] The Terminate on setting is gone - with hosters removed its three choices collapsed to one, and pre-emptive termination now always counts cached torrents, still only when Pre-emptive Termination is enabled
