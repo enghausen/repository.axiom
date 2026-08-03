@@ -118,7 +118,7 @@
 			Rework for Seren 2.0
 		</news>
 	</extension>
-</addon><addon id="plugin.video.axiom" version="4.6.0" name="Axiom" provider-name="enghausen">
+</addon><addon id="plugin.video.axiom" version="4.7.0" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.1" />
@@ -188,6 +188,20 @@
             <screenshot>resources/screenshots/screenshot-04.png</screenshot>
         </assets>
         <news>
+            Changelog 4.7.0
+            [BUG] Cancelling a cache assist now deletes the transfer at the provider - Real-Debrid, AllDebrid and TorBox kept downloading after a cancel, and cancelling was wrongly reported as a failure that "runs in the background"
+            [BUG] The cache assist dialog now shows real download progress - TorBox served data up to ten minutes stale unless asked for fresh, so every figure ever shown was zero or outdated
+            [BUG] Provider states are read truthfully - queued and seeding Premiumize transfers and Real-Debrid's storage stage were treated as failures and deleted, and unknown states no longer count as failed, so a healthy or completed download can no longer be destroyed by a wrong reading
+            [BUG] A brief network problem no longer costs a running transfer - status lookups tolerate three consecutive misses, and when tracking is truly lost the transfer is left at the provider instead of deleted
+            [BUG] The dialog now ends when a transfer finishes, fails or stalls - it previously polled forever, and stalls are detected three hours after progress stops rather than three hours after the transfer started
+            [BUG] Kodi exit no longer risks hanging on a running cache assist - shutdown reaches the polling loops through the service, and transfers are left to finish at the provider, since completing while Kodi is off is the feature working
+            [BUG] The first debrid request after starting Kodi no longer fails, and every request is faster - request blocking ran two full stack inspections per HTTP request
+            [BUG] Background cache assists now report their outcome - completion and failure notify and are logged, where they previously said nothing at all
+            [FEATURE] Every transfer gets its own row in Cache Assist Status - concurrent transfers previously overwrote each other's row; rows update from the provider when the list opens, show a provider tag, and Clear Non Active clears all finished business without logging errors
+            [FEATURE] Starting a source that is already being cached is refused instead of creating a duplicate transfer
+            [FEATURE] Cache assists end on their own after 24 hours, leaving the transfer at the provider
+            AllDebrid cache assists remain unavailable until its API migration - the improvements above apply to Premiumize, Real-Debrid and TorBox
+
             Changelog 4.6.0
             [BUG] A failing debrid service can no longer hide the sources of the others - each provider's results now survive any other provider's crash
             [BUG] Debrid API errors no longer crash scraping, browsing, caching or downloading - Real-Debrid, AllDebrid and TorBox now detect and report errors instead of reading them as data, completing what 4.4.0 started for Premiumize
