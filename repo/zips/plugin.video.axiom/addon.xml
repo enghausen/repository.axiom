@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.axiom" version="4.7.0" name="Axiom" provider-name="enghausen">
+<addon id="plugin.video.axiom" version="4.8.0" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.1" />
@@ -69,6 +69,17 @@
             <screenshot>resources/screenshots/screenshot-04.png</screenshot>
         </assets>
         <news>
+            Changelog 4.8.0
+            [BUG] Real-Debrid listings are complete past 100 items - My Files, cloud sources and the transfer list previously saw only the first hundred torrents
+            [BUG] A cloud file named exactly after its film can now be found - the title matcher required something to follow the title, so a bare named torrent could never match its own film; the fix applies to all source matching and only adds matches
+            [BUG] Files that Real-Debrid packs as a RAR archive are detected and explained - playing one is refused with a clear message instead of failing in the player without explanation, the cloud scraper logs why such an item is skipped, and a folder whose links disagree with its files shows an explanation instead of broken entries
+            [BUG] A deliberate playback refusal no longer claims a connection error - explained failures show one message, and the generic failure text now says the item could not be played without guessing at the cause
+            [BUG] Real-Debrid is no longer hammered once it rate limits a scrape - a long list of blocked or dead sources tripped the 250 per minute limit and every remaining source then failed pointlessly; automatic probes now pause briefly while other providers continue, and Premiumize gains the same protection
+            [BUG] One broken item no longer takes down the Real-Debrid file listing - linkless or degraded torrents are skipped with the reason logged
+            [BUG] A transfer deleted on the Real-Debrid website is now recognised as gone - instead of being looked up forever, both while watching it and in Cache Assist Status
+            [BUG] A failed cache assist start no longer leaves an orphaned transfer at Real-Debrid, and single file selections can no longer select the wrong files
+            [BUG] The Real-Debrid availability probe no longer triggers pointless downloads for unusable torrents, and its probe torrents are always cleaned up
+
             Changelog 4.7.0
             [BUG] Cancelling a cache assist now deletes the transfer at the provider - Real-Debrid, AllDebrid and TorBox kept downloading after a cancel, and cancelling was wrongly reported as a failure that "runs in the background"
             [BUG] The cache assist dialog now shows real download progress - TorBox served data up to ten minutes stale unless asked for fresh, so every figure ever shown was zero or outdated
