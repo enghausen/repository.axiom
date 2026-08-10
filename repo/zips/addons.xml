@@ -118,7 +118,7 @@
 			Rework for Seren 2.0
 		</news>
 	</extension>
-</addon><addon id="plugin.video.axiom" version="4.8.0" name="Axiom" provider-name="enghausen">
+</addon><addon id="plugin.video.axiom" version="4.9.0" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.1" />
@@ -188,6 +188,18 @@
             <screenshot>resources/screenshots/screenshot-04.png</screenshot>
         </assets>
         <news>
+            Changelog 4.9.0
+            [BUG] AllDebrid magnet operations work again - AllDebrid retired the API endpoint they relied on, and everything now speaks their current API, so cloud sources, My Files browsing and torrent playback function once more, and cache assists work for the first time
+            [BUG] A failed AllDebrid resolve no longer litters the account - every attempt cleans up the magnet it created on any failure, and never touches a magnet already kept in your cloud, which AllDebrid hands back unchanged when the same content is added twice
+            [BUG] AllDebrid cache assists report truthfully - progress starts at 0 instead of -1, queued and processing transfers count as downloading instead of failing, a transfer deleted on the website is recognised as gone instead of looked up forever and without an error notification for a deliberate conclusion, a brief network problem no longer ends tracking, and cancelling never deletes a magnet the assist did not create
+            [BUG] AllDebrid refusals now say why - a magnet the service declines names its reason instead of a generic failure, which also unmasked refusals previously blamed on the retired endpoint
+            [BUG] AllDebrid rate limits are respected - automatic probes pause briefly after a refusal instead of retrying into it, the same protection Real-Debrid and Premiumize gained in 4.8.0
+            [BUG] An expired AllDebrid subscription is now noticed - the account status can read Expired, so the expiry notification can actually fire
+            [FEATURE] Source lists tell the truth about caching - Real-Debrid and AllDebrid cannot say whether a torrent is cached without trying it, so their rows are marked Unchecked instead of claiming Cached, the scrape window counts Cached and Unchecked separately, and verified rows sort above unchecked ones when otherwise equal
+            [BUG] The scrape window no longer reports zero playable sources above a full list - with only Real-Debrid or AllDebrid enabled the playable count excluded the rows nobody had checked, although every one of them was clickable
+            [FEATURE] View Uncached means what it says - it lists what Premiumize and TorBox actually checked and found uncached; with all providers enabled it previously always showed nothing
+            AllDebrid still cannot say in advance whether a torrent is cached - their API only answers after content is added, so AllDebrid rows stay Unchecked and clicking one simply tries it; this was always the case, the label now says so
+
             Changelog 4.8.0
             [BUG] Real-Debrid listings are complete past 100 items - My Files, cloud sources and the transfer list previously saw only the first hundred torrents
             [BUG] A cloud file named exactly after its film can now be found - the title matcher required something to follow the title, so a bare named torrent could never match its own film; the fix applies to all source matching and only adds matches
