@@ -118,7 +118,7 @@
 			Rework for Seren 2.0
 		</news>
 	</extension>
-</addon><addon id="plugin.video.axiom" version="4.9.0" name="Axiom" provider-name="enghausen">
+</addon><addon id="plugin.video.axiom" version="4.9.1" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.1" />
@@ -188,6 +188,9 @@
             <screenshot>resources/screenshots/screenshot-04.png</screenshot>
         </assets>
         <news>
+            Changelog 4.9.1
+            [BUG] Season folders and smart play playlists no longer fail while episode metadata is fetched - every concurrent TVDB lookup shared one thread pool and the first to finish shut it down under the others, which surfaced as CancelledError or "cannot schedule new futures after shutdown" in the log, playlists that did not build and a season that refused to open until a retry happened to win the race; each lookup now runs on its own pool sized to its work
+
             Changelog 4.9.0
             [BUG] AllDebrid magnet operations work again - AllDebrid retired the API endpoint they relied on, and everything now speaks their current API, so cloud sources, My Files browsing and torrent playback function once more, and cache assists work for the first time
             [BUG] A failed AllDebrid resolve no longer litters the account - every attempt cleans up the magnet it created on any failure, and never touches a magnet already kept in your cloud, which AllDebrid hands back unchanged when the same content is added twice
