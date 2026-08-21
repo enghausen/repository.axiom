@@ -118,7 +118,7 @@
 			Rework for Seren 2.0
 		</news>
 	</extension>
-</addon><addon id="plugin.video.axiom" version="4.9.1" name="Axiom" provider-name="enghausen">
+</addon><addon id="plugin.video.axiom" version="4.10.0" name="Axiom" provider-name="enghausen">
     <requires>
         <import addon="xbmc.addon" version="17.9.910" />
         <import addon="xbmc.python" version="3.0.1" />
@@ -188,6 +188,12 @@
             <screenshot>resources/screenshots/screenshot-04.png</screenshot>
         </assets>
         <news>
+            Changelog 4.10.0
+            [FEATURE] Axiom offers to cache what it could not play - when every source tried for a click fails and Real-Debrid or AllDebrid answered that it does not hold one or more of them yet, one dialog offers to cache one of those sources; accepting opens the familiar caching list in your configured sort order and starts a tracked cache assist at your preferred cloud location, and playing again once it has finished works like any cached source; background and playlist resolves never ask
+            [BUG] A failed resolve is no longer remembered for an hour - the result of a failed attempt was cached like a successful one, so clicking play again within the hour repeated the failure without trying the sources again
+            [BUG] A failed resolve in automatic play mode now ends with Axiom's "No playable sources" notice instead of Kodi's playback failed dialog, and no longer records the failure as the show's last played release title
+            [BUG] Source select shows a freshly cached source at the top of its list after a manual cache assist is followed to completion, as it was always meant to
+
             Changelog 4.9.1
             [BUG] Season folders and smart play playlists no longer fail while episode metadata is fetched - every concurrent TVDB lookup shared one thread pool and the first to finish shut it down under the others, which surfaced as CancelledError or "cannot schedule new futures after shutdown" in the log, playlists that did not build and a season that refused to open until a retry happened to win the race; each lookup now runs on its own pool sized to its work
 
